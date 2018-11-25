@@ -105,7 +105,7 @@ class Fire {
                 this.y = norVandak2[1];
                 this.firetact = 0;
 
-                var norFire = new Fire(norVandak2[0], v[1]);
+                var norFire = new Fire(norVandak2[0], norVandak2[1]);
                 FireArr.push(norFire);
                 matrix[norVandak2[1]][norVandak2[0]] = 6;
             }
@@ -231,5 +231,6 @@ class Fire {
             }
         }
     }
+  
 
 }

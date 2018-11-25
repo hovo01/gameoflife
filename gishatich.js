@@ -149,7 +149,7 @@ class Gishatich {
                 this.gishTact = 0;
 
                 this.energy++;
-
+                
                 for (var g in GishatichArr) {
                     for (var n in xotakerArr) {
                         if (xotakerArr[n].x == GishatichArr[g].x && xotakerArr[n].y == GishatichArr[g].y) {
@@ -228,24 +228,26 @@ class Gishatich {
             }
             else {
                 this.sharjvelGsh();
+                
             }
         }
     }
     bazmanalGsh() {
         var norVandak = random(this.yntrelVandak(3.1));
+        var norVandak2 = random(this.yntrelVandak(0));
         this.gishTact = 0;
-        if (norVandak) {
+        if (norVandak && norVandak2) {
 
-        var norGishatich = new Gishatich(norVandak[0], norVandak[1]);
+        var norGishatich = new Gishatich(norVandak2[0], norVandak2[1]);
         GishatichArr.push(norGishatich);
             if(Math.random() < 0.5){
 
-                matrix[norVandak[1]][norVandak[0]] = 3;
+                matrix[norVandak2[1]][norVandak2[0]] = 3;
                 this.gishTact = 0;
             }
             else{
 
-                matrix[norVandak[1]][norVandak[0]] = 3.1;
+                matrix[norVandak2[1]][norVandak2[0]] = 3.1;
                 this.gishTact = 0;
             }
         }

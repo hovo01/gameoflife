@@ -5,7 +5,7 @@ class Trip {
         this.energy = 0;
         this.directions = [];
         this.index = 9;
-        this.hunterTact = 0;
+        
 
     }
 
@@ -38,7 +38,7 @@ class Trip {
     }
     krakel() {
 
-        this.hunterTact++;
+        
         var norVandak = random(this.yntrelVandak(2));
         var norVandak2 = random(this.yntrelVandak(2.1));
         var norVandakhn = random(this.yntrelVandak(3));
@@ -47,32 +47,32 @@ class Trip {
         if (norVandak) {
             matrix[norVandak[1]][norVandak[0]] = 0;
 
-            this.hunterTact = 0;
+            
             xotakerArr.splice(norVandak, 1);
         }
 
         else if (norVandak2) {
             matrix[norVandak2[1]][norVandak2[0]] = 0;
 
-            this.hunterTact = 0;
+            
             xotakerArr.splice(norVandak2, 1);
         }
         else if (norVandakhn2) {
             matrix[norVandakhn2[1]][norVandakhn2[0]] = 0;
 
-            this.hunterTact = 0;
+            
             GishatichArr.splice(norVandakhn2, 1);
         }
         else if (norVandakhn) {
             matrix[norVandakhn[1]][norVandakhn[0]] = 0;
 
-            this.hunterTact = 0;
+            
             GishatichArr.splice(norVandakhn, 1);
         }
         else if (norVandakhn3) {
             matrix[norVandakhn3[1]][norVandakhn3[0]] = 0;
 
-            this.hunterTact = 0;
+            
             hunterArr.splice(norVandakhn3, 1);
         }
     }

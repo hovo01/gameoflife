@@ -8,10 +8,7 @@ var socket = io.connect();
 //     }
 
 // }
-var matrix =[
-    [0,2.1,2,2],
-    [1,1,1,9],
-]
+
 
 var matrix = [
 
@@ -68,10 +65,33 @@ var matrix = [
 
 
 ];
-// var matrix = [
-//     [2,2,0,2],
-//     [2,0,0,9],
-// ]
+
+
+
+var matrix = [ 
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+    [1,1,1,1,1,1,0,1,1,1,0,0,0,1,0,0,1,0,0,0],
+    [0,0,0,0,1,1,1,1,0,1,1,1,0,1,1,0,1,0,1,0],
+    [0,0,0,0,1,1,0,0,0,1,1,1,1,0,1,0,1,0,0,0],
+    [0,0,0,0,1,1,1,0,0,1,0,0,1,0,0,1,0,1,0,0],
+    [1,0,0,0,3.1,1,3.1,1,2.1,1,1,0,1,0,1,1,0,1,0,0],
+    [0,0,0,2,2,2,0,0,0,0,0,1,1,1,0,1,1,0,0,0],
+    [0,0,2,1,0,1,1,0,2,1,1,1,0,0,0,0,0,0,0,0],
+    [3,1,0,2,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0],
+    [3,3,0,0,0,1,0,0,0,0,2,2,2,0,0,2,0,0,0,0],
+    [2,0,3,2,0,2,0,2,2,2,0,2.1,2,2,2.1,2,0,2,0,0],
+    [3,0,0,3,0,0,0,2,2,2,3,0,2,2,0,0,0,2,0,0],
+    [3,0,0,0,0,3,3,0,0,0,0,2,0,2,0,2,0,0,0,0],
+    [3,0,0,0,3,3,3,0,0,2,0,2,2,0,2,2,0,0,0,0],
+    [0,3,0,0,0,3,3,0,0,2,2,2,0,2,0,2,0,0,0,0],
+    [0,0,3,2,3,3,0,3,0,0,0,2,0,0,0,2,0,0,0,0],
+    [0,0,0,0,3,3,0,0,0,0,2,2,0,0,0,2,2,0,2,0],
+    [0,0,0,3,0,0,3.1,2,0,0,2,2.1,3,3.1,0,0,2,2,0,0],
+    [0,0,0,3,0,0,3,0,2.1,0,0,0,0,0,0,0,0,0,0,0]
+    [0,0,0,3,0,0,4,4,2.1,0,0,0,0,0,0,0,0,0,0,0]
+]
+
 var GishatichArr = [];
 var hunterArr = [];
 var ZombiArr = [];
@@ -320,9 +340,12 @@ function draw() {
     for (var i in grassArr) {
         grassArr[i].bazmanal();
     }
+    for(var xot in xotakerArr){
+        xotakerArr[xot].utel();
+    }
     for (var u in xotakerArr) {
-        xotakerArr[u].utel();
-        if(xotakerArr[u].energy==3){
+       
+        if(xotakerArr[u].energy==2){
             xotakerArr[u].bazmanalXt();
         }
         if(xotakerArr[u].energy==-6){
@@ -337,20 +360,21 @@ function draw() {
         }
     }
     
+   
 
     for (var g in GishatichArr) {
         GishatichArr[g].utelgs();
-    }
-    for (var f in GishatichArr) {
-        if (GishatichArr[f].energy == 6) {
-            GishatichArr[f].bazmanalGsh();
+    
+   
+        if (GishatichArr[g].energy == 2) {
+            GishatichArr[g].bazmanalGsh();
         }
 
-        if (GishatichArr[f].energy == -6) {
+        if (GishatichArr[g].energy == -6) {
 
-            GishatichArr[f].mernelGsh();
+            GishatichArr[g].mernelGsh();
             for (var m in GishatichArr) {
-                if (GishatichArr[m].x == GishatichArr[f].x && GishatichArr[m].y == GishatichArr[f].y) {
+                if (GishatichArr[m].x == GishatichArr[g].x && GishatichArr[m].y == GishatichArr[g].y) {
                     GishatichArr.splice(m, 1);
                     break;
                 }
@@ -386,12 +410,13 @@ function draw() {
     }
 
 
-    for (var l in tripArr) {
-        tripArr[l].krakel();
+    for (var tr in tripArr) {
+        tripArr[tr].krakel();
     }
 
     for (var t in FireArr) {
         FireArr[t].utelFire();
+        
 
         for (var z in grassArr) {
             if (grassArr[z].x == FireArr[t].x && grassArr[z].y == FireArr[t].y) {

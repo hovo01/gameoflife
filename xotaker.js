@@ -167,7 +167,7 @@ class Xotaker {
 
             else {
                 this.sharjvel();
-                console.log(this.energy);
+                console.log(this.energy+"xot");
             }
         }
     }
