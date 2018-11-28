@@ -5,6 +5,7 @@ class Fire {
         this.directions = [];
         this.index = 6;
         this.firetact = 0;
+        this.energy=0;
 
     }
 
@@ -38,6 +39,7 @@ class Fire {
 
     sharjvelFire() {
         this.firetact++;
+        this.energy--;
         var norVandak = random(this.yntrelVandak(0));
         if (weather === 'winter') {
 
@@ -48,6 +50,7 @@ class Fire {
                 this.x = norVandak[0];
                 this.y = norVandak[1];
                 this.firetact = 0;
+                
             }
         }
         else {
@@ -58,12 +61,17 @@ class Fire {
                 this.x = norVandak[0];
                 this.y = norVandak[1];
                 this.firetact = 0;
+               
             }
         }
     }
+hangel(){
+    matrix[this.y][this.x] = 0;
+}
 
     utelFire() {
         this.firetact++;
+        this.energy--;
         var norVandakxot = random(this.yntrelVandak(1));
         var norVandak = random(this.yntrelVandak(2));
         var norVandak2 = random(this.yntrelVandak(2.1));
@@ -84,6 +92,7 @@ class Fire {
                 var norFire = new Fire(norVandakxot[0], norVandakxot[1]);
                 FireArr.push(norFire);
                 matrix[norVandakxot[1]][norVandakxot[0]] = 6;
+                
             } 
             if (this.firetact >= 24 && norVandak) {
                 matrix[this.y][this.x] = 6;
@@ -96,6 +105,7 @@ class Fire {
                 var norFire = new Fire(norVandak[0], norVandak[1]);
                 FireArr.push(norFire);
                 matrix[norVandak[1]][norVandak[0]] = 6;
+                
             }
             if (this.firetact >= 24 && norVandak2) {
                 matrix[this.y][this.x] = 6;
@@ -108,6 +118,7 @@ class Fire {
                 var norFire = new Fire(norVandak2[0], norVandak2[1]);
                 FireArr.push(norFire);
                 matrix[norVandak2[1]][norVandak2[0]] = 6;
+                
             }
             if (this.firetact >= 24 && norVandakZombi) {
                 matrix[this.y][this.x] = 6;
@@ -120,6 +131,7 @@ class Fire {
                 var norFire = new Fire(norVandakZombi[0], norVandakZombi[1]);
                 FireArr.push(norFire);
                 matrix[norVandakZombi[1]][norVandakZombi[0]] = 6;
+                
             }
             if (this.firetact >= 24 && norVandakZombi2) {
                 matrix[this.y][this.x] = 6;
@@ -132,6 +144,7 @@ class Fire {
                 var norFire = new Fire(norVandakZombi2[0], norVandakZombi2[1]);
                 FireArr.push(norFire);
                 matrix[v[1]][norVandakZombi2[0]] = 6;
+                
             }
            
 
@@ -146,6 +159,7 @@ class Fire {
                 var norFire = new Fire(norVandakZombihnt[0], norVandakZombihnt[1]);
                 FireArr.push(norFire);
                 matrix[norVandakZombihnt[1]][norVandakZombihnt[0]] = 6;
+               
             }
             else {
                 this.sharjvelFire();
@@ -163,6 +177,7 @@ class Fire {
                 var norFire = new Fire(norVandakxot[0], norVandakxot[1]);
                 FireArr.push(norFire);
                 matrix[norVandakxot[1]][norVandakxot[0]] = 6;
+                
             }
             if (this.firetact >= 7 && norVandak) {
                 matrix[this.y][this.x] = 6;
@@ -175,6 +190,7 @@ class Fire {
                 var norFire = new Fire(norVandak[0], norVandak[1]);
                 FireArr.push(norFire);
                 matrix[norVandak[1]][norVandak[0]] = 6;
+               
             }
             if (this.firetact >= 7 && norVandak2) {
                 matrix[this.y][this.x] = 6;
@@ -187,6 +203,7 @@ class Fire {
                 var norFire = new Fire(norVandak2[0], norVandak2[1]);
                 FireArr.push(norFire);
                 matrix[norVandak2[1]][norVandak2[0]] = 6;
+               
             }
             if (this.firetact >= 7 && norVandakZombi) {
                 matrix[this.y][this.x] = 6;
@@ -199,6 +216,7 @@ class Fire {
                 var norFire = new Fire(norVandakZombi[0], norVandakZombi[1]);
                 FireArr.push(norFire);
                 matrix[norVandakZombi[1]][norVandakZombi[0]] = 6;
+                
             }
             if (this.firetact >= 7 && norVandakZombi2) {
                 matrix[this.y][this.x] = 6;
@@ -211,6 +229,7 @@ class Fire {
                 var norFire = new Fire(norVandakZombi2[0], norVandakZombi2[1]);
                 FireArr.push(norFire);
                 matrix[norVandakZombi2[1]][norVandakZombi2[0]] = 6;
+              
             }
             
 
@@ -225,6 +244,7 @@ class Fire {
                 var norFire = new Fire(norVandakZombihnt[0], norVandakZombihnt[1]);
                 FireArr.push(norFire);
                 matrix[norVandakZombihnt[1]][norVandakZombihnt[0]] = 6;
+            
             }
             else {
                 this.sharjvelFire();
